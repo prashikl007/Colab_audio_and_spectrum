@@ -127,6 +127,10 @@ audio, Fs = get_audio()
   
   
 #line Four
+audio = audio[:, 0]  #selct only first list which has data
+
+
+#line Five
 #plot tin time domain
 import matplotlib.pyplot as plt
 plt.figure(figsize=(20,10))
@@ -134,10 +138,9 @@ plt.plot(audio)
 plt.show()
 
 
-#line Five
-#plot magnitude spectrum
-audio = audio[:, 0]  #selct only first list which has data
 
+#line six
+#plot magnitude spectrum
 plt.figure(figsize=(20,10))
 plt.magnitude_spectrum(audio, sr)
 plt.title('Magnitude spectrum')
